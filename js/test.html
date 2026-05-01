@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Sprite Offset Demo</title>
+<style>
+  canvas { background: #222; display: block; margin: 20px auto; }
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+
+// Line segment from zombie to target
+const start = { x: 100, y: 100 };
+const end = { x: 500, y: 300 };
+
+// Calculate vector and angle
+const dx = end.x - start.x;
+const dy = end.y - start.y;
+const distance = Math.sqrt(dx*dx + dy*dy);
+const theta = Math.atan2(dy, dx);
+const delta = { x: Math.cos(theta), y: Math.sin(theta) };
+
+// Example sprite size
+const sprite = { width: 60, height: 37.5 };
+
+// Segment positions
+const times = Math.max(2, Math.floor(distance / 80));
+const k = distance / times;
+let currentPos = { ...start };
+let picPos = [];
+
+for (let t = 0; t < times; t++) {
+  picPos.push({ x: currentPos.x, y: currentPos.y, width: k, rotate: theta });
+  currentPos.x += delta.x * k;
+  currentPos.y += delta.y * k;
+}
+
+// Function to draw sprite
+function drawSprite(pos, useOffset = true) {
+  let a = useOffset 
+          ? [-pos.width/2 + 10*delta.y, -sprite.height/2 - 10*delta.x] 
+          : [0, 0];
+  
+  const drawX = pos.x + delta.x * pos.width / 2 + a[0];
+  const drawY = pos.y + delta.y * pos.width / 2 + a[1];
+  
+  ctx.save();
+  ctx.translate(drawX + sprite.width/2, drawY + sprite.height/2);
+  ctx.rotate(pos.rotate);
+  ctx.fillStyle = useOffset ? 'yellow' : 'cyan';
+  ctx.fillRect(-sprite.width/2, -sprite.height/2, sprite.width, sprite.height);
+  ctx.restore();
+}
+
+// Draw all segments
+for (let i = 0; i < picPos.length; i++) {
+  drawSprite(picPos[i], true);  // With offset
+  drawSprite(picPos[i], false); // Without offset
+}
+
+// Draw the line for reference
+ctx.strokeStyle = 'white';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(start.x, start.y);
+ctx.lineTo(end.x, end.y);
+ctx.stroke();
+</script>
+
+</body>
+</html>
