@@ -1,13 +1,9 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  "use strict";
-/* prototype类补丁 */
+
 
 Reflect.defineProperty(Object.prototype, 'length', {
-  //查询对象中own属性数量
+ 
   enumerable: false,
   configurable: false,
 
@@ -18,13 +14,13 @@ Reflect.defineProperty(Object.prototype, 'length', {
 });
 
 Object.prototype[Symbol.iterator] = function () {
-  //普通对象允许使用forof遍历own属性
+
   const values = Object.values(this);
   return Array.prototype[Symbol.iterator].call(values);
 };
 
 Reflect.defineProperty(Array.prototype, 'random', {
-  //从数组中随机抽取一个元素
+  
   enumerable: false,
 
   value() {
@@ -33,7 +29,7 @@ Reflect.defineProperty(Array.prototype, 'random', {
 
 });
 Reflect.defineProperty(String.prototype, 'reverse', {
-  //反转字符串
+ 
   enumerable: false,
 
   value() {

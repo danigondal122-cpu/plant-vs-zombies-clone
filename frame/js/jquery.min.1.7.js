@@ -1,8 +1,4 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  /*! jQuery v1.7 jquery.com | jquery.org/license */
 (function (a, b) {
   function cA(a) {

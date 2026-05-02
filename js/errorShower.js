@@ -1,19 +1,15 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  (function () {
   const $ = id => id && document.getElementById(id),
         $n = tag => document.createElement(tag),
         ClearChild = (...arr) => arr.forEach(ele => (ele === null || ele === void 0 ? void 0 : ele.parentNode) && ele.parentNode.removeChild(ele)),
-        //此函数是直接删除元素
+      
   SetBlock = (...arr) => arr.forEach(ele => ele.style.display = "block"),
         SetNone = (...arr) => arr.forEach(ele => ele.style.display = "none"),
-        //此函数是隐藏，同时清除元素占位
+        
   SetVisible = (...arr) => arr.forEach(ele => ele && (ele.style.visibility = "visible")),
         SetHidden = (...arr) => arr.forEach(ele => ele.style.visibility = "hidden"),
-        //此函数是隐藏，但只是看不见，元素会占位
+        
   SetAlpha = (ele, alpha) => ele.style.opacity = alpha,
         innerText = (ele, str) => ele.innerText = str,
         SetStyle = (ele, json) => {
@@ -24,7 +20,7 @@
     return ele;
   },
         NewEle = function (id, tag, cssText, properties, wrap) {
-    //创建新元素
+   
     const ele = $n(tag);
     ele.id = id;
     ele.style.cssText = cssText;
@@ -33,7 +29,7 @@
     return ele;
   },
         NewImg = function (id, src, cssText, wrap, properties) {
-    //创建新图片
+   
     let _properties = {
       src
     };
@@ -110,28 +106,28 @@
       ele.addEventListener(effectType + 'end', function _callback(event) {//animation completes
         if (event.target !== event.currentTarget) return; //规避冒泡 //avoid bbbles
 
-        ele.removeEventListener(effectType + 'end', _callback);//remove event //避免多个属性同时改变时重复触发回调！
+        ele.removeEventListener(effectType + 'end', _callback);//remove event 
 
-        for (let index of cssList) ele.style[index] = ''; //还原动画配置属性
+        for (let index of cssList) ele.style[index] = ''; 
 
 
-        callback && callback(ele); //触发传入回调
-      });
-      /* 触发动画 */
+        callback && callback(ele); 
+      })
+    
 
-      ele.clientLeft;//flush previous style before new //reflow //触发页面的回流，使得动画的样式设置上去时可以立即执行
+      ele.clientLeft;//flush previous style before new //reflow 
 
       SetStyle(ele, cssValues);
       return ele;
     },
 
-    //自定义淡入
+    
     fadeTo: (ele, opacity, duration, callback) => oEffects.Animate(ele, {
       opacity: opacity
     }, duration, undefined, callback),
-    //从无到有淡入
+   
     fadeIn: (ele, duration, callback) => oEffects.fadeTo(ele, 1, duration, callback),
-    //从有到无淡出
+   
     fadeOut: (ele, duration, callback, delay) => oEffects.fadeTo(ele, 0, duration, callback, delay)
   };
   let nowY = 0;

@@ -1,13 +1,6 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
- /*! 
-* 这个文件以后就专门用来写游戏中的一些复杂的定制功能（渲染）的代码
-*/
+
 "use strict";
-/* 注册即用服务 */
+
 
 document.addEventListener('visibilitychange', _ => document.hidden && IsGaming(1) && oMenu.open());
 document.body.addEventListener("keydown", evt => {
@@ -15,17 +8,17 @@ document.body.addEventListener("keydown", evt => {
 
   switch (key) {
     case 13:
-      //回车调出测试关卡
+    
       localStorage.JNG_DEV === 'true' && SelectModal('test');
       break;
 
     case 81:
-      //Q键调出铲子 
+     
       IsGaming(1) && $('imgShovel').style.visibility != "hidden" && $('imgShovel').click();
       break;
 
     default:
-      //选取植物快捷键
+     
       key < 58 && key > 47 && IsGaming() && ChosePlant({
         clientX: $User.clientX + EDAlloffsetLeft,
         clientY: $User.clientY
@@ -51,7 +44,7 @@ let oButtons = {
   },
 
   SetStaticTexts() {
-    let self = this; //显示所有的html按钮文字
+    let self = this;
 
     let buttons = [{
       "query": "#dSelectCard #button1",

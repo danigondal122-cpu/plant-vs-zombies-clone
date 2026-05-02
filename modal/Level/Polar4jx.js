@@ -1,8 +1,4 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  'use strict';
 {
     let PlaceZombieRandom = function (a, b = Math['floor'](Math['random']() * 0x5) + 0x1) {

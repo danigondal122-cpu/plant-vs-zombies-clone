@@ -1,21 +1,12 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  "use strict";
 
 var CPlants = NewO({
-  /*
-      上次和囧姨请教了几个关于植物定位属性的区分，就记录在这里了
-      pixel：图片某个边缘到舞台边缘的距离
-      beAttackedPoint：植物图像左下角（原点0）向某个方向，能触发僵尸攻击的范围
-      Attacked：相对于整个场景，植物能触发僵尸攻击的范围
-  */
+ 
   EName: "CPlants",
   HP: 300,
 
-  /* PKind调用说明：0（花盆容器）、1（普通植物）、2（保护容器）、3（I类重叠植物，如花椒）、4（II类重叠植物，如液态保护膜）、5（可重叠型地形容器，如瓷砖） */
+ 
   PKind: 1,
   beAttackedPointL: 20,
   CardGif: 0,

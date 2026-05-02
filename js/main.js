@@ -1,8 +1,4 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  'use strict';
 const BlankPNG = 'data:image/webp;base64,UklGRkAAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAIAAAAAAFZQOCAYAAAAMAEAnQEqAQABAAFAJiWkAANwAP789AAA', WIN = window, DOC = document, EBody = DOC['body'], EElement = DOC['documentElement'], RESPATH = 'images/interface/', dSurface = $('dSurface'), PKindUpperLimit = 0x5, PKindTraverseOrder = [
         0x5,

@@ -1,8 +1,4 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  if (true) {
   var _search$lang, _search$src, _search$preloadData;
 
@@ -15,7 +11,7 @@
     let arr = ele.split("=");
     search[arr[0]] = arr[1];
   });
-  delete localStorage.JNG_DEV; //获取地区性语言
+  delete localStorage.JNG_DEV;
 
   if (!localStorage.JNG_TR_USER_LANGUAGE) {
     localStorage.JNG_TR_USER_LANGUAGE = navigator.language.toLocaleLowerCase();

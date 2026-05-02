@@ -1,15 +1,11 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  "use strict";
 
 var CZombies = NewO({
   EName: "Zombies",
   HP: 270,
   Lvl: 1,//strength lebrl
-  //僵尸强度级别，普通为1路障2铁桶4撑杆2
+  
   NormalGif: 2,
   CardGif: 0,
   CanDisplay: 1,//zombie visibility
@@ -30,9 +26,9 @@ var CZombies = NewO({
   Speed: 1.6,//speed can be affected  by ice
   PZ: 1,
   Wrap: 'dPZ',//element container
-  //放置僵尸DOM的容器，默认为dPZ
+  
   SpeedCoefficient: 1,//speed multiplier
-  //僵尸速度系数，默认为1，越低僵尸走的越慢（这个东西不受减速或亢奋效果影响，比如减速则最终速度是在减速的速度基础上乘上这个系数）
+  
   DivingDepth: 0,//how nderwater zombie is in ixels
   //僵尸潜下去多深
   AKind: 0,//attack type 0 bite 1 smash 2 vehicle

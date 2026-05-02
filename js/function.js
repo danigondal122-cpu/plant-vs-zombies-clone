@@ -1,26 +1,22 @@
-/*! 
- * Copyright 2022 JiangNanGame. All rights reserved.
- * Use of this source code is governed by The-Changjiang-River-License. 
- * The link of our license: https://github.com/jiangnangame/The-Changjiang-River-License/
- */
+
  "use strict"; 
 var asyncInnerHTML = function (HTML, callBack, arg) {
-  //异步插入HTML函数，拼接大量HTML并且执行回调函数
+ 
   let temp = $n('template'),
       content = temp.content,
       frag = document.createDocumentFragment();
-  temp.innerHTML = HTML; //要加入的内容先放到这里
+  temp.innerHTML = HTML;
 
   (function fun(Num) {
     Num-- ? (frag.appendChild(content.firstChild), setTimeout(_ => fun(Num), 0)) : callBack(frag, arg);
   })(content.childNodes.length);
 },
     syncInnerHTML = function (HTML, callBack, arg) {
-  //同步插入HTML函数，拼接大量HTML并且执行回调函数
+  
   let temp = $n('template'),
       content = temp.content,
       frag = document.createDocumentFragment();
-  temp.innerHTML = HTML; //要加入的内容先放到这里
+  temp.innerHTML = HTML; 
 
   (function fun(Num) {
     Num-- ? (frag.appendChild(content.firstChild), fun(Num)) : callBack(frag, arg);
@@ -28,9 +24,9 @@ var asyncInnerHTML = function (HTML, callBack, arg) {
 },
     WhichMouseButton = e => $SEql(e.which, {
   1: 1,
-  //左键
+
   3: 2,
-  //右键
+  
   "default": 1
 }),
     DisplayZombie = function (left = 50, top = 150, width = 201, height = 444) {
@@ -1721,7 +1717,7 @@ oPropSym = {
   },
 
   addProp(name, num = 1) {
-    //购入道具
+   
     this.readData();
 
     if (this.data[name] === void 0) {
