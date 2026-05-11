@@ -3,7 +3,7 @@
 {
     Mobile && ($('quickKeyTextShovel')['style']['display'] = 'none'), oS['Init']({
         'PicArr': [
-            'images/interface/Logo.webp',
+            'images/interface/pvz.png',
             'images/interface/Surface.webp',
             'images/interface/Surface.webp',
             'images/Plants/IceAloe/IceAloe.webp',
@@ -12,7 +12,7 @@
             'images/Plants/SunShroom/SunShroom.webp'
         ],
         'LoadMusic': 'logo',
-        'backgroundImage': 'images/interface/Logo.webp',
+        'backgroundImage': 'images/interface/pvz.png',
         'LoadAccess'() {
             if (!oS['warmStart']) {
                 EDAll['innerHTML'] += '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22startGame\x22\x20onclick=\x22PlayAudio(\x27pause\x27);SetBlock($(\x27dSurface\x27));\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22userButton\x22\x20class=\x22voidButton\x20jngButton\x22\x20onclick=\x22\x22>' + oButtons['GetName']('user') + '</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22languageButton\x22\x20class=\x22voidButton\x20jngButton\x22\x20onclick=\x22\x22>' + $__language_Array__['d292663d214af95b390e5dca0fa01ab9'] + '</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';
@@ -43,11 +43,11 @@
                         'backgroundImage': 'url(./images/interface/smallButton.png)'
                     });
                     let k = './images/interface/NationFlags/', l = [
-                            {
-                                'icon': k + 'china.png',
-                                'value': 'zh-cn',
-                                'text': $__language_Array__['b8555c6ee61705540102fe3427b87d1f']
-                            },
+                            // {
+                            //     'icon': k + 'china.png',
+                            //     'value': 'zh-cn',
+                            //     'text': $__language_Array__['b8555c6ee61705540102fe3427b87d1f']
+                            // },
                             {
                                 'icon': k + 'america.png',
                                 'value': 'en-us',
